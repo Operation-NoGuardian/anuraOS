@@ -10,7 +10,10 @@ rootfs/*
 node_modules
 anurax86.tar.gz
 symlinks
-build/images/
+
+# I am nice so I give you free images
+
+!build/images/
 build/
 dist/
 bios/

@@ -1,12 +1,12 @@
 [submodule "nohost"]
 	path = nohost
-	url = https://github.com/MercuryWorkshop/nohost
+	url = https://github.com/Operation-NoGuardian/nohost
 [submodule "v86"]
 	path = v86
-	url = https://github.com/MercuryWorkshop/v86
+	url = https://github.com/Operation-NoGuardian/v86
 [submodule "aboutproxy"]
 	path = aboutproxy
-	url = https://github.com/MercuryWorkshop/aboutproxy
+	url = https://github.com/Operation-NoGuardian/aboutproxy
 [submodule "libapps"]
 	path = libapps
 	url = https://chromium.googlesource.com/apps/libapps
