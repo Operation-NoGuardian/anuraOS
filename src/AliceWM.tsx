@@ -172,7 +172,7 @@ class WMWindow {
                                     height="12px"
                                     class="windowButtonIcon"
                                 />
-                            ))
+                            ) as HTMLImageElement)
                         }
                     </button>
                     <button
@@ -522,9 +522,9 @@ class WMWindow {
         this.oldstyle = this.element.getAttribute("style");
         console.log(this.oldstyle);
         const width =
-            window.innerWidth ||
-            document.documentElement.clientWidth ||
-            document.body.clientWidth;
+            (window.innerWidth ||
+                document.documentElement.clientWidth ||
+                document.body.clientWidth) - 4;
         const height =
             window.innerHeight ||
             document.documentElement.clientHeight ||
@@ -594,9 +594,9 @@ class WMWindow {
             return;
         }
         const width =
-            window.innerWidth ||
-            document.documentElement.clientWidth ||
-            document.body.clientWidth;
+            (window.innerWidth ||
+                document.documentElement.clientWidth ||
+                document.body.clientWidth) - 4;
         const height =
             window.innerHeight ||
             document.documentElement.clientHeight ||
@@ -882,7 +882,7 @@ class WMWindow {
         }
         scaledHeight = height - 49;
 
-        const elem = (
+        const elem: DLElement<any> = (
             <div
                 class={`snapPreview-${side}`}
                 id="snapPreview"
@@ -891,7 +891,7 @@ class WMWindow {
         );
 
         setTimeout(() => {
-            elem.style.opacity = null;
+            elem.style.removeProperty("opacity");
         }, 10);
 
         return elem;
@@ -955,7 +955,7 @@ class WMSplitBar {
         this.element.style.left = width / 2 - 4 + "px";
         document.body.appendChild(this.element);
         setTimeout(() => {
-            this.element.style.backgroundColor = null;
+            this.element.style.removeProperty("background-color");
         }, 10);
         document.addEventListener("mousemove", (evt) => {
             if (this.dragging) {
@@ -989,7 +989,7 @@ class WMSplitBar {
     }
 
     fadeOut() {
-        this.element.style.backgroundColor = null;
+        this.element.style.removeProperty("background-color");
     }
 
     remove() {
